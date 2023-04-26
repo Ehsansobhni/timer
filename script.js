@@ -3,9 +3,6 @@ let minute = 0;
 let second = 0;
 let time;
 
-// document.getElementById('start').onclick = () => starTimer();
-// document.getElementById('pause').onclick = () => stopTimer();
-// document.getElementById('reset').onclick = () => reseTimer();
 
 function starTimer() {
     stopTimer();
