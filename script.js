@@ -5,11 +5,13 @@ let time;
 
 
 function starTimer() {
-    stopTimer();
+    // stopTimer();
+    document.getElementById("start").setAttribute("disabled","true");
     time = setInterval(() => { timer(); }, 1000);
   }
   
   function stopTimer() {
+    document.getElementById("start").removeAttribute("disabled");
     clearInterval(time);
   }
   
