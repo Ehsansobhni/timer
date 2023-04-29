@@ -7,11 +7,13 @@ let time;
 function starTimer() {
     // stopTimer();
     document.getElementById("start").setAttribute("disabled","true");
-    time = setInterval(() => { timer(); }, 1000);
+    time = setInterval(() => { timer(); }, 10);
   }
   
   function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
+    lib(hour,minute,second);
+    
     clearInterval(time);
   }
   
@@ -49,4 +51,15 @@ function starTimer() {
   
   function returnData(input) {
     return input > 9 ? input : `0${input}`
+  }
+
+  function lib(h,m,s){
+    const tableLib = document.querySelector("#lib");
+    
+    const timerDate = document.createElement("h1");
+    
+
+    const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
+    timerDate.appendChild(timerNode);
+    tableLib.appendChild(timerDate);
   }
