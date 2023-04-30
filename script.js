@@ -13,6 +13,9 @@ function starTimer() {
   function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
     clearInterval(time);
+    lip(hour,minute,second);
+    
+    
   }
   
   function reseTimer() {
@@ -49,4 +52,15 @@ function starTimer() {
   
   function returnData(input) {
     return input > 9 ? input : `0${input}`
+  }
+
+  function lip(h,m,s){
+    const tableLip = document.querySelector("#lips");
+    
+    const timerDate = document.createElement("h2");
+    
+
+    const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
+    timerDate.appendChild(timerNode);
+    tableLip.appendChild(timerDate);
   }
