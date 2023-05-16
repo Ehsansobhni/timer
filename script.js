@@ -7,14 +7,15 @@ let time;
 function starTimer() {
     // stopTimer();
     document.getElementById("start").setAttribute("disabled","true");
-    time = setInterval(() => { timer(); }, 10);
+    time = setInterval(() => { timer(); }, 1000);
   }
   
   function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
-    lib(hour,minute,second);
-    
     clearInterval(time);
+    lip(hour,minute,second);
+    
+    
   }
   
   function reseTimer() {
@@ -53,13 +54,13 @@ function starTimer() {
     return input > 9 ? input : `0${input}`
   }
 
-  function lib(h,m,s){
-    const tableLib = document.querySelector("#lib");
+  function lip(h,m,s){
+    const tableLip = document.querySelector("#lips");
     
-    const timerDate = document.createElement("h1");
+    const timerDate = document.createElement("h2");
     
 
     const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
     timerDate.appendChild(timerNode);
-    tableLib.appendChild(timerDate);
+    tableLip.appendChild(timerDate);
   }
