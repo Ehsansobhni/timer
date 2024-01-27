@@ -13,12 +13,12 @@ function starTimer() {
   function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
     clearInterval(time);
-    lip(hour,minute,second);
+    lap(hour,minute,second);
     
     
   }
   
-  function reseTimer() {
+  function resetTimer() {
     stopTimer();
     hour = 0;
     minute = 0;
@@ -42,7 +42,7 @@ function starTimer() {
       hour++;
     }
     if (hour == 24){
-        reseTimer(); 
+        resetTimer(); 
     }
     document.getElementById('hour').innerText = returnData(hour);
     document.getElementById('min').innerText = returnData(minute);
@@ -54,12 +54,9 @@ function starTimer() {
     return input > 9 ? input : `0${input}`
   }
 
-  function lip(h,m,s){
+  function lap(h,m,s){
     const tableLip = document.querySelector("#lips");
-    
     const timerDate = document.createElement("h2");
-    
-
     const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
     timerDate.appendChild(timerNode);
     tableLip.appendChild(timerDate);
