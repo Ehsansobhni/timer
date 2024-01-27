@@ -3,23 +3,28 @@ let minute = 0;
 let second = 0;
 let time;
 
+let isStopped = true ;
 
-function starTimer() {
+function startTimer() {
     // stopTimer();
     document.getElementById("start").setAttribute("disabled","true");
     time = setInterval(() => { timer(); }, 1000);
-  }
-  
-  function stopTimer() {
+    isStopped = false;
+}
+
+function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
     clearInterval(time);
-    lap(hour,minute,second);
-    
-    
-  }
-  
-  function resetTimer() {
-    stopTimer();
+    if (hour != 0 || minute != 0 || second != 0) {
+        lap(hour,minute,second);
+    }
+    isStopped = true;
+}
+
+function resetTimer() {
+    if (!isStopped) {
+        stopTimer();
+    }
     hour = 0;
     minute = 0;
     second = 0;
@@ -27,8 +32,7 @@ function starTimer() {
     document.getElementById('hour').innerText = '00';
     document.getElementById('min').innerText = '00';
     document.getElementById('sec').innerText = '00';
-    
-  }
+}
   function timer() {
 
       second++;
