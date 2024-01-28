@@ -54,13 +54,13 @@ function starTimer() {
     return input > 9 ? input : `0${input}`
   }
 
-  function lip(h,m,s){
-    const tableLip = document.querySelector("#lips");
+  function lap(h,m,s){
+    const tableLap = document.querySelector("#laps");
     
     const timerDate = document.createElement("h2");
     
 
     const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
     timerDate.appendChild(timerNode);
-    tableLip.appendChild(timerDate);
+    tableLap.appendChild(timerDate);
   }
