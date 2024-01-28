@@ -3,7 +3,7 @@ let minute = 0;
 let second = 0;
 let time;
 
-let isStopped = true ;
+let isStopped = false;
 
 function startTimer() {
     // stopTimer();
@@ -33,6 +33,34 @@ function resetTimer() {
     document.getElementById('min').innerText = '00';
     document.getElementById('sec').innerText = '00';
 }
+
+
+function starTimer() {
+    // stopTimer();
+    document.getElementById("start").setAttribute("disabled","true");
+    time = setInterval(() => { timer(); }, 1000);
+  }
+  function stopTimer() {
+    document.getElementById("start").removeAttribute("disabled");
+    clearInterval(time);
+    // اگر زمان صفر نیست، تابع lap را فراخوانی کن
+    if (hour != 0 || minute != 0 || second != 0) {
+        lap(hour,minute,second);
+    }
+}
+
+  
+  function resetTimer() {
+    stopTimer();
+    hour = 0;
+    minute = 0;
+    second = 0;
+    
+    document.getElementById('hour').innerText = '00';
+    document.getElementById('min').innerText = '00';
+    document.getElementById('sec').innerText = '00';
+    
+  }
   function timer() {
 
       second++;
