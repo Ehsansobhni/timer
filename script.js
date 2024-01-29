@@ -2,11 +2,9 @@ let hour = 0;
 let minute = 0;
 let second = 0;
 let time;
-
 let isStopped = false;
 
 function startTimer() {
-    // stopTimer();
     document.getElementById("start").setAttribute("disabled","true");
     time = setInterval(() => { timer(); }, 1000);
     isStopped = false;
@@ -28,15 +26,12 @@ function resetTimer() {
     hour = 0;
     minute = 0;
     second = 0;
-    
     document.getElementById('hour').innerText = '00';
     document.getElementById('min').innerText = '00';
     document.getElementById('sec').innerText = '00';
 }
 
-
 function starTimer() {
-    // stopTimer();
     document.getElementById("start").setAttribute("disabled","true");
     time = setInterval(() => { timer(); }, 1000);
   }
@@ -49,8 +44,7 @@ function starTimer() {
     }
 }
 
-  
-  function resetTimer() {
+function resetTimer() {
     stopTimer();
     hour = 0;
     minute = 0;
@@ -62,9 +56,7 @@ function starTimer() {
     
   }
   function timer() {
-
       second++;
-    
     if (second == 60) {
       second = 0;
       minute++;
@@ -79,7 +71,6 @@ function starTimer() {
     document.getElementById('hour').innerText = returnData(hour);
     document.getElementById('min').innerText = returnData(minute);
     document.getElementById('sec').innerText = returnData(second);
-    
   }
   
   function returnData(input) {
