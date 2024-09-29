@@ -38,6 +38,14 @@ function starTimer() {
   function stopTimer() {
     document.getElementById("start").removeAttribute("disabled");
     clearInterval(time);
+
+    lip(hour,minute,second);
+    
+    
+  }
+  
+  function reseTimer() {
+
     // اگر زمان صفر نیست، تابع lap را فراخوانی کن
     if (hour != 0 || minute != 0 || second != 0) {
         lap(hour,minute,second);
@@ -77,9 +85,16 @@ function resetTimer() {
     return input > 9 ? input : `0${input}`
   }
 
+  function lip(h,m,s){
+    const tableLip = document.querySelector("#lips");
+    
+    const timerDate = document.createElement("h2");
+    
+
   function lap(h,m,s){
     const tableLip = document.querySelector("#lips");
     const timerDate = document.createElement("h2");
+
     const timerNode = document.createTextNode(returnData(h)+":"+ returnData(m)+":"+returnData(s));
     timerDate.appendChild(timerNode);
     tableLip.appendChild(timerDate);
