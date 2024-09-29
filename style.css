@@ -1,9 +1,18 @@
+
 .timer-container {
   background-color: rgb(135, 21, 47);
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+.timer-container{
+    background-color: rgb(111, 127, 107);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 .timer-wrapper {
@@ -11,10 +20,21 @@
   margin-bottom: 60px;
   font-size: 300px;
 }
+
 h2 {
   background-color: rgb(255, 255, 255);
   border-radius: 25px;
   padding: 5px;
+
+h2{
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    padding: 5px;
+}
+
+body{
+    margin: 0;
+
 }
 
 body {
